@@ -25,7 +25,8 @@ public class controllerBarang {
         mB.setKodeBarangModel(vB.getKodeBarangView().getText());
         mB.setNamaBarangModel(vB.getNamaBarangView().getText());
         mB.setStokBarangModel(Integer.parseInt(vB.getStokBarangView().getText()));
-        mB.setTglExpiredModel(vB.getTglExpiredView().getText());        
+        mB.setTglExpiredModel(vB.getTglExpiredView().getText());   
+        mB.setBarangMasukModel(vB.getBarangMasukView().getText());   
         mB.setKeteranganBarangModel(vB.getKeteranganBarangView().getText());
         
         // JOptionPane.showConfirmDialog(vP, " Nama Pelanggan : "+mP.getNamaPelangganModel()+"\n Nomor Hp : "+mP.getNomorHpModel()+"\n Jenis Kelamin : "+mP.getJenisKelaminModel()+"\n Umur : "+mP.getUmur()+"\n Alamat: "+mP.getAlamat());
@@ -39,6 +40,7 @@ public class controllerBarang {
         vB.getNamaBarangView().setText("");
         vB.getStokBarangView().setText("");
         vB.getTglExpiredView().setText("");
+        vB.getBarangMasukView().setText("");
         vB.getKeteranganBarangView().setText("");
     }
     
@@ -69,7 +71,8 @@ public class controllerBarang {
         mB.setKodeBarangModel(vB.getKodeBarangView().getText());
         mB.setNamaBarangModel(vB.getNamaBarangView().getText());
         mB.setStokBarangModel(Integer.parseInt(vB.getStokBarangView().getText()));
-        mB.setTglExpiredModel(vB.getTglExpiredView().getText());        
+        mB.setTglExpiredModel(vB.getTglExpiredView().getText());      
+        mB.setBarangMasukModel(vB.getBarangMasukView().getText());      
         mB.setKeteranganBarangModel(vB.getKeteranganBarangView().getText());
         
         mB.updateBarang();

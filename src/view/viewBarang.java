@@ -40,6 +40,7 @@ public class viewBarang extends javax.swing.JInternalFrame {
         model.addColumn("Nama Barang");
         model.addColumn("Stok");
         model.addColumn("Tanggal Expired");
+        model.addColumn("Tgl Barang Masuk");
         model.addColumn("Keterangan");
         
         tampilDataBarang();
@@ -81,6 +82,12 @@ public class viewBarang extends javax.swing.JInternalFrame {
     public JButton getTombolBatal(){
         return tombolBatal;
     }
+
+    public JTextField getBarangMasukView() {
+        return barangMasuk;
+    }
+    
+    
     
     private void tampilDataBarang(){
         model.getDataVector().removeAllElements();
@@ -101,7 +108,8 @@ public class viewBarang extends javax.swing.JInternalFrame {
                 hasil[1] = res.getString("nama_barang");
                 hasil[2] = res.getString("stok");
                 hasil[3] = res.getString("tgl_exp");
-                hasil[4] = res.getString("keterangan");
+                hasil[4] = res.getString("barang_masuk");
+                hasil[5] = res.getString("keterangan");
                 
                 model.addRow(hasil);
             }
@@ -128,7 +136,8 @@ public class viewBarang extends javax.swing.JInternalFrame {
                 hasil[1] = res.getString("nama_barang");
                 hasil[2] = res.getString("stok");
                 hasil[3] = res.getString("tgl_exp");
-                hasil[4] = res.getString("keterangan");
+                hasil[4] = res.getString("barang_masuk");
+                hasil[5] = res.getString("keterangan");
                 
                 model.addRow(hasil);
             }
@@ -156,7 +165,8 @@ public class viewBarang extends javax.swing.JInternalFrame {
                 hasil[1] = res.getString("nama_barang");
                 hasil[2] = res.getString("stok");
                 hasil[3] = res.getString("tgl_exp");
-                hasil[4] = res.getString("keterangan");
+                hasil[4] = res.getString("barang_masuk");
+                hasil[5] = res.getString("keterangan");
                 
                 model.addRow(hasil);
             }
@@ -173,13 +183,15 @@ public class viewBarang extends javax.swing.JInternalFrame {
         String nama = String.valueOf(tabelBahanBaku.getValueAt(index, 1));
         String stok = String.valueOf(tabelBahanBaku.getValueAt(index, 2));
         String exp = String.valueOf(tabelBahanBaku.getValueAt(index, 3));
-        String keterangan = String.valueOf(tabelBahanBaku.getValueAt(index, 4));
+        String masuk = String.valueOf(tabelBahanBaku.getValueAt(index, 4));
+        String keterangan = String.valueOf(tabelBahanBaku.getValueAt(index, 5));
         
         // Mengisi nilai ke textfield
         kodeBarang.setText(kode);
         namaBarang.setText(nama);
         expBarang.setText(exp);
         stokBarang.setText(stok);
+        barangMasuk.setText(masuk);
         keteranganBarang.setText(keterangan);
         
         cB.kontrolButtonDua();
@@ -214,6 +226,8 @@ public class viewBarang extends javax.swing.JInternalFrame {
         tombolHapus = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabelBahanBaku = new javax.swing.JTable();
+        jLabel7 = new javax.swing.JLabel();
+        barangMasuk = new javax.swing.JTextField();
 
         setClosable(true);
         setMaximizable(true);
@@ -303,6 +317,10 @@ public class viewBarang extends javax.swing.JInternalFrame {
         });
         jScrollPane2.setViewportView(tabelBahanBaku);
 
+        jLabel7.setText("Tanggal Barang Masuk");
+
+        barangMasuk.setText("yyyy-mm-dd");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -310,57 +328,62 @@ public class viewBarang extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(jLabel2)
-                            .addGap(0, 0, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(kodeBarang)
-                                        .addComponent(namaBarang, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)))
-                                .addComponent(jLabel6))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel4))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(stokBarang)
-                                .addComponent(expBarang, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))))
                     .addComponent(jLabel3)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(kodeBarang)
+                                    .addComponent(namaBarang, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)))
+                            .addComponent(jLabel6))
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(stokBarang)
+                            .addComponent(expBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(tombolBatal)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tombolHapus)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tombolUbah)
-                        .addGap(36, 36, 36)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 205, Short.MAX_VALUE)
                         .addComponent(tombolSimpan))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel7)
+                        .addGap(18, 18, 18)
+                        .addComponent(barangMasuk, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 745, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 745, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(ExpAsc)
                         .addGap(18, 18, 18)
                         .addComponent(ExpDesc)
-                        .addGap(27, 27, 27))))
+                        .addGap(7, 7, 7)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ExpAsc)
+                            .addComponent(ExpDesc)))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -378,21 +401,17 @@ public class viewBarang extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(94, 94, 94))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tombolUbah)
-                        .addComponent(tombolHapus)
-                        .addComponent(tombolBatal)
-                        .addComponent(tombolSimpan))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(ExpAsc)
-                        .addComponent(ExpDesc)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(barangMasuk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(56, 56, 56)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tombolUbah)
+                            .addComponent(tombolHapus)
+                            .addComponent(tombolBatal)
+                            .addComponent(tombolSimpan))))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -439,6 +458,7 @@ public class viewBarang extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ExpAsc;
     private javax.swing.JButton ExpDesc;
+    private javax.swing.JTextField barangMasuk;
     private javax.swing.JTextField expBarang;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -446,6 +466,7 @@ public class viewBarang extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea keteranganBarang;

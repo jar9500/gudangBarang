@@ -19,6 +19,7 @@ public class modelBarang {
     private String tglExpiredModel;
     private int stokBarangModel;
     private String keteranganBarangModel;
+    private String barangMasukModel;
     // Inisialisasi variable id barang
     private String kodeBarangModel;
 
@@ -62,14 +63,22 @@ public class modelBarang {
     public void setKodeBarangModel(String kodeBarangModel) {
         this.kodeBarangModel = kodeBarangModel;
     }
+
+    public String getBarangMasukModel() {
+        return barangMasukModel;
+    }
+
+    public void setBarangMasukModel(String barangMasukModel) {
+        this.barangMasukModel = barangMasukModel;
+    }
     
     
     
     public void simpanBarang(){
         // Inisialisasi query untuk insert ke dalam database
-        String sql = ("INSERT INTO barang (kd_barang, nama_barang, stok, tgl_exp, keterangan) "
+        String sql = ("INSERT INTO barang (kd_barang, nama_barang, stok, tgl_exp, barang_masuk, keterangan) "
                 + "VALUES ('"+getKodeBarangModel()+"','"+getNamaBarangModel()+"'"
-                + ",'"+getStokBarangModel()+"', '"+getTglExpiredModel()+"', '"+getKeteranganBarangModel()+"') ");
+                + ",'"+getStokBarangModel()+"', '"+getTglExpiredModel()+"', '"+getBarangMasukModel()+"', '"+getKeteranganBarangModel()+"') ");
     
         // Inisialisasi prepraredStatment
         try{
@@ -102,6 +111,7 @@ public class modelBarang {
                 + " ,nama_barang = '"+getNamaBarangModel()+"'"
                 + " ,stok = '"+getStokBarangModel()+"'"
                 + " ,tgl_exp = '"+getTglExpiredModel()+"'"
+                + " ,barang_masuk = '"+getBarangMasukModel()+"'"
                 + " ,keterangan = '"+getKeteranganBarangModel()+"' WHERE kd_barang = '"+getKodeBarangModel()+"'";
                 
     
