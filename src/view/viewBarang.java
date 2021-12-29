@@ -35,7 +35,7 @@ public class viewBarang extends javax.swing.JInternalFrame {
         
         cB = new controllerBarang(this);
         model = new DefaultTableModel();
-        tabelBahanBaku.setModel(model);
+        tabelBarang.setModel(model);
         model.addColumn("Kode Barang");
         model.addColumn("Nama Barang");
         model.addColumn("Stok");
@@ -86,8 +86,6 @@ public class viewBarang extends javax.swing.JInternalFrame {
     public JTextField getBarangMasukView() {
         return barangMasuk;
     }
-    
-    
     
     private void tampilDataBarang(){
         model.getDataVector().removeAllElements();
@@ -176,15 +174,15 @@ public class viewBarang extends javax.swing.JInternalFrame {
     }
     
     private void ambilDataTabel(){
-        int index = tabelBahanBaku.getSelectedRow();
+        int index = tabelBarang.getSelectedRow();
         
         //mengambil nilai dari tabel
-        String kode = String.valueOf(tabelBahanBaku.getValueAt(index, 0));
-        String nama = String.valueOf(tabelBahanBaku.getValueAt(index, 1));
-        String stok = String.valueOf(tabelBahanBaku.getValueAt(index, 2));
-        String exp = String.valueOf(tabelBahanBaku.getValueAt(index, 3));
-        String masuk = String.valueOf(tabelBahanBaku.getValueAt(index, 4));
-        String keterangan = String.valueOf(tabelBahanBaku.getValueAt(index, 5));
+        String kode = String.valueOf(tabelBarang.getValueAt(index, 0));
+        String nama = String.valueOf(tabelBarang.getValueAt(index, 1));
+        String stok = String.valueOf(tabelBarang.getValueAt(index, 2));
+        String exp = String.valueOf(tabelBarang.getValueAt(index, 3));
+        String masuk = String.valueOf(tabelBarang.getValueAt(index, 4));
+        String keterangan = String.valueOf(tabelBarang.getValueAt(index, 5));
         
         // Mengisi nilai ke textfield
         kodeBarang.setText(kode);
@@ -225,7 +223,7 @@ public class viewBarang extends javax.swing.JInternalFrame {
         tombolSimpan = new javax.swing.JButton();
         tombolHapus = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tabelBahanBaku = new javax.swing.JTable();
+        tabelBarang = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
         barangMasuk = new javax.swing.JTextField();
 
@@ -298,8 +296,8 @@ public class viewBarang extends javax.swing.JInternalFrame {
             }
         });
 
-        tabelBahanBaku.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        tabelBahanBaku.setModel(new javax.swing.table.DefaultTableModel(
+        tabelBarang.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tabelBarang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -310,12 +308,12 @@ public class viewBarang extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tabelBahanBaku.addMouseListener(new java.awt.event.MouseAdapter() {
+        tabelBarang.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tabelBahanBakuMouseClicked(evt);
+                tabelBarangMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(tabelBahanBaku);
+        jScrollPane2.setViewportView(tabelBarang);
 
         jLabel7.setText("Tanggal Barang Masuk");
 
@@ -449,10 +447,10 @@ public class viewBarang extends javax.swing.JInternalFrame {
         tampilDataBarang();
     }//GEN-LAST:event_tombolHapusActionPerformed
 
-    private void tabelBahanBakuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelBahanBakuMouseClicked
+    private void tabelBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelBarangMouseClicked
         // TODO add your handling code here:
         ambilDataTabel();
-    }//GEN-LAST:event_tabelBahanBakuMouseClicked
+    }//GEN-LAST:event_tabelBarangMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -473,7 +471,7 @@ public class viewBarang extends javax.swing.JInternalFrame {
     private javax.swing.JTextField kodeBarang;
     private javax.swing.JTextField namaBarang;
     private javax.swing.JTextField stokBarang;
-    private javax.swing.JTable tabelBahanBaku;
+    private javax.swing.JTable tabelBarang;
     private javax.swing.JButton tombolBatal;
     private javax.swing.JButton tombolHapus;
     private javax.swing.JButton tombolSimpan;
