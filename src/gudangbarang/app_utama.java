@@ -5,6 +5,7 @@
  */
 package gudangbarang;
 
+import javax.swing.JFrame;
 import view.viewBarang;
 import view.viewBarangKeluar;
 
@@ -19,6 +20,7 @@ public class app_utama extends javax.swing.JFrame {
      */
     public app_utama() {
         initComponents();
+        
     }
 
     /**
@@ -30,8 +32,8 @@ public class app_utama extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         dekstopUtama = new javax.swing.JDesktopPane();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -42,21 +44,21 @@ public class app_utama extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Program Inventory Management");
-
         dekstopUtama.setBackground(new java.awt.Color(153, 153, 255));
 
         javax.swing.GroupLayout dekstopUtamaLayout = new javax.swing.GroupLayout(dekstopUtama);
         dekstopUtama.setLayout(dekstopUtamaLayout);
         dekstopUtamaLayout.setHorizontalGroup(
             dekstopUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 780, Short.MAX_VALUE)
         );
         dekstopUtamaLayout.setVerticalGroup(
             dekstopUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 341, Short.MAX_VALUE)
+            .addGap(0, 456, Short.MAX_VALUE)
         );
+
+        jLabel1.setFont(new java.awt.Font("Cambria", 1, 24)); // NOI18N
+        jLabel1.setText("Program Inventory Management CV. Cemerlang Dwi Lestari");
 
         jMenu1.setText("File");
 
@@ -106,17 +108,16 @@ public class app_utama extends javax.swing.JFrame {
                     .addComponent(dekstopUtama)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(0, 483, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(19, 19, 19)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(dekstopUtama)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(dekstopUtama))
         );
 
         pack();

@@ -5,6 +5,8 @@
  */
 package gudangbarang;
 
+import view.viewLogin;
+
 /**
  *
  * @author JAR
@@ -19,8 +21,8 @@ public class GudangBarang {
        // app_utama aplikasi = new app_utama();
        // aplikasi.setVisible(true);
        
-       app_utama utama = new app_utama();
-       utama.setVisible(true);
+       viewLogin vL = new viewLogin();
+       vL.setVisible(true);
     }
     
 }
