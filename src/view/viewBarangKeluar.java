@@ -389,21 +389,6 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
 
     private void simpanBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanBTActionPerformed
         // TODO add your handling code here:
-
-        String sql = "INSERT INTO barang_keluar (id_barang_keluar, barang_keluar, kd_barang"
-                + ",nama_barang, barang_masuk, jumlah_barang_keluar, tgl_exp, keterangan_keluar) "
-                + "VALUES ('"+idBarangKeluar.getText()+"','"+barangKeluar.getText()+"'"
-                + ",'"+kodeBarang.getText()+"','"+namaBarang.getText()+"'"
-                + ",'"+barangMasuk.getText()+"','"+jumlahBarangKeluar.getText()+"'"
-                + ",'"+expBarang.getText()+"','"+keteranganKeluar.getText()+"')";
-            
-        try{
-            PreparedStatement eksekusi = koneksi.getKoneksi().prepareStatement(sql);
-                eksekusi.execute();
-        }catch(SQLException ex){
-            JOptionPane.showMessageDialog(null,"Data laporan detail gagal disimpan " +ex);
-        }
-        
         Integer stokUtama, stokKeluar, totalStok;
         stokUtama = Integer.parseInt(stokBarang.getText());
         stokKeluar = Integer.parseInt(jumlahBarangKeluar.getText());

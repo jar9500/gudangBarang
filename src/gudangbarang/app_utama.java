@@ -54,7 +54,7 @@ public class app_utama extends javax.swing.JFrame {
         );
         dekstopUtamaLayout.setVerticalGroup(
             dekstopUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 456, Short.MAX_VALUE)
+            .addGap(0, 445, Short.MAX_VALUE)
         );
 
         jLabel1.setFont(new java.awt.Font("Cambria", 1, 24)); // NOI18N
@@ -117,7 +117,8 @@ public class app_utama extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(dekstopUtama))
+                .addComponent(dekstopUtama)
+                .addContainerGap())
         );
 
         pack();
