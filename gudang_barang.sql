@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2021 at 06:53 PM
+-- Generation Time: Dec 30, 2021 at 04:01 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.26
 
@@ -41,10 +41,36 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`kd_barang`, `nama_barang`, `stok`, `tgl_exp`, `barang_masuk`, `keterangan`) VALUES
-('A1', 'Aqua 600ML', 12, '2020-12-12', '2021-12-29', 'Barang Bagus'),
-('A2', 'Aqua 600ML', 44, '2021-01-05', '2021-12-29', 'Paket Gratis'),
-('A3', 'Aqua 300ML', 24, '2019-05-30', '2021-12-29', 'Kiriman Terbaru PT Suka Maju Mundur Asik Banget'),
-('A4', 'Aqua 300ML', 15, '2050-12-31', '2021-12-29', 'Expired Lama');
+('A1', 'Aqua 600 ML', 1, '2050-01-01', '2021-12-29', 'Aqua Botol'),
+('A2', 'Aqua 600 ML', 124, '2022-12-01', '2017-01-31', 'Aqua Botol');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `barang_keluar`
+--
+
+CREATE TABLE `barang_keluar` (
+  `id_barang_keluar` varchar(5) NOT NULL,
+  `barang_keluar` date NOT NULL,
+  `kd_barang` varchar(5) NOT NULL,
+  `nama_barang` varchar(20) NOT NULL,
+  `barang_masuk` date NOT NULL,
+  `jumlah_barang_keluar` int(11) NOT NULL,
+  `tgl_exp` date NOT NULL,
+  `keterangan_keluar` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `barang_keluar`
+--
+
+INSERT INTO `barang_keluar` (`id_barang_keluar`, `barang_keluar`, `kd_barang`, `nama_barang`, `barang_masuk`, `jumlah_barang_keluar`, `tgl_exp`, `keterangan_keluar`) VALUES
+('BK01', '2021-05-05', 'A1', 'Aqua 600 ML', '2021-12-29', 100, '2050-01-01', 'Keluar'),
+('BK02', '2022-01-01', 'A1', 'Aqua 600 ML', '2021-12-29', 99, '2050-01-01', 'Keluar'),
+('BK03', '2022-01-01', 'A1', 'Aqua 600 ML', '2021-12-29', 99, '2050-01-01', 'Tes'),
+('BK04', '2022-12-12', 'A1', 'Aqua 600 ML', '2021-12-29', 99, '2050-01-01', 'Tes kedua'),
+('BK05', '2001-12-12', 'A1', 'Aqua 600 ML', '2021-12-29', 998, '2050-01-01', 'Tes Ketiga');
 
 --
 -- Indexes for dumped tables
@@ -55,6 +81,12 @@ INSERT INTO `barang` (`kd_barang`, `nama_barang`, `stok`, `tgl_exp`, `barang_mas
 --
 ALTER TABLE `barang`
   ADD PRIMARY KEY (`kd_barang`);
+
+--
+-- Indexes for table `barang_keluar`
+--
+ALTER TABLE `barang_keluar`
+  ADD PRIMARY KEY (`id_barang_keluar`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
