@@ -28,9 +28,10 @@ public class controllerBarangKeluar {
         mBK.setKodeBarang(vBK.getKodeBarang().getText());
         mBK.setNamaBarang(vBK.getNamaBarang().getText());
         mBK.setBarangMasuk(vBK.getBarangMasuk().getText());
-        mBK.setJumlahBarangKeluar(Integer.parseInt(vBK.getJumlahBarangKeluar().getText()));
         mBK.setTglExpired(vBK.getExpBarang().getText());
         mBK.setKeteranganKeluar(vBK.getKeteranganKeluar().getText());
+        mBK.setJumlahBarangKeluar(Integer.parseInt(vBK.getJumlahBarangKeluar().getText()));
+        mBK.setStokBarang(Integer.parseInt(vBK.getStokBarang().getText()));
         
         mBK.simpanLaporanKeluar();
     }
@@ -66,6 +67,7 @@ public class controllerBarangKeluar {
         
         mBK.hapusLaporanKeluar();
         bersihkan();
+        kontrolButton();
     }
     
         public void kontrolButton(){

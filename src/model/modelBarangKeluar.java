@@ -25,6 +25,7 @@ public class modelBarangKeluar {
     private int JumlahBarangKeluar;
     private String tglExpired;
     private String keteranganKeluar;
+    private int stokBarang;
 
     public String getIdBarangKeluar() {
         return idBarangKeluar;
@@ -58,8 +59,6 @@ public class modelBarangKeluar {
         this.namaBarang = namaBarang;
     }
 
-    
-    
     public String getBarangMasuk() {
         return barangMasuk;
     }
@@ -91,8 +90,28 @@ public class modelBarangKeluar {
     public void setKeteranganKeluar(String keteranganKeluar) {
         this.keteranganKeluar = keteranganKeluar;
     }
+
+    public int getStokBarang() {
+        return stokBarang;
+    }
+
+    public void setStokBarang(int stokBarang) {
+        this.stokBarang = stokBarang;
+    }
+    
+    
     
     public void simpanLaporanKeluar(){
+        Integer totalStok = getStokBarang() - getJumlahBarangKeluar();
+        
+        String sqlupdate = "UPDATE barang SET stok = '"+totalStok+"' "
+                + "WHERE kd_barang = '"+getKodeBarang()+"'";
+        try{
+            PreparedStatement eksekusi = koneksi.getKoneksi().prepareStatement(sqlupdate);
+                eksekusi.execute();
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null,"Data laporan detail gagal disimpan " +ex);
+        }
         
         String sql = "INSERT INTO barang_keluar (id_barang_keluar,barang_keluar,kd_barang, nama_barang,"
                 + "barang_masuk, jumlah_barang_keluar, tgl_exp, keterangan_keluar)"
@@ -108,7 +127,7 @@ public class modelBarangKeluar {
         } catch (SQLException ex) {
             Logger.getLogger(modelBarangKeluar.class.getName()).log(Level.SEVERE, null, ex);
         }
-                        
+        
     }
     
     public void hapusLaporanKeluar(){
