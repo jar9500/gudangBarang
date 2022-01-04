@@ -5,6 +5,7 @@
  */
 package controller;
 
+import model.modelBarang;
 import model.modelBarangKeluar;
 import view.viewBarangKeluar;
 
@@ -48,4 +49,13 @@ public class controllerBarangKeluar {
         vBK.getBarangKeluar().setText("");
         vBK.getKeteranganKeluar().setText("");
     }
+    
+    public void hapusLaporanKeluar(){
+        mBK = new modelBarangKeluar();
+        mBK.setIdBarangKeluar(vBK.getIdBarangKeluar().getText());
+        
+        mBK.hapusLaporanKeluar();
+        bersihkan();
+    }
+    
 }

@@ -110,4 +110,18 @@ public class modelBarangKeluar {
         }
                         
     }
+    
+    public void hapusLaporanKeluar(){
+        String sql = "DELETE FROM barang_keluar WHERE id_barang_keluar = "
+                + " '"+getIdBarangKeluar()+"'";
+        
+        try{
+            PreparedStatement eksekusi = koneksi.getKoneksi().prepareStatement(sql);
+            eksekusi.execute();
+            // Pemberitahuan jika data berhasil dihapus
+            JOptionPane.showMessageDialog(null,"Data Berhasil dihapus.");
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null,"Data Gagal dihapus" + ex);
+        }
+    }
 }

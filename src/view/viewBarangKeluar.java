@@ -120,6 +120,24 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
         }
     }
     
+    private void ambilBarangKeluar(){
+        int index = laporanBarangKeluar.getSelectedRow();
+        
+        //mengambil nilai dari tabel
+        String kodeBK = String.valueOf(laporanBarangKeluar.getValueAt(index, 0));
+        String jumlahBK = String.valueOf(laporanBarangKeluar.getValueAt(index, 5));
+        String tglKeluar = String.valueOf(laporanBarangKeluar.getValueAt(index, 6));
+        String ketKeluar = String.valueOf(laporanBarangKeluar.getValueAt(index, 7));
+        
+        // Mengisi nilai ke textfield
+        idBarangKeluar.setText(kodeBK);
+        jumlahBarangKeluar.setText(jumlahBK);
+        barangKeluar.setText(tglKeluar);
+        keteranganKeluar.setText(ketKeluar);
+        
+        //cB.kontrolButtonDua();
+    }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -156,6 +174,7 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
         keteranganKeluar = new javax.swing.JTextArea();
         simpanBT = new javax.swing.JButton();
         batalBT = new javax.swing.JButton();
+        hapusBT = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         laporanBarangKeluar = new javax.swing.JTable();
 
@@ -284,6 +303,13 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
             }
         });
 
+        hapusBT.setText("Hapus");
+        hapusBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hapusBTActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -297,18 +323,15 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(simpanBT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(batalBT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(idBarangKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(barangKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jumlahBarangKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(idBarangKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(barangKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jumlahBarangKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(simpanBT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(batalBT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(hapusBT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(23, 23, 23))
         );
         jPanel2Layout.setVerticalGroup(
@@ -317,6 +340,8 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(hapusBT)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(batalBT)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(simpanBT))
@@ -350,6 +375,11 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        laporanBarangKeluar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                laporanBarangKeluarMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(laporanBarangKeluar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -413,6 +443,17 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
         cBK.bersihkan();
     }//GEN-LAST:event_batalBTActionPerformed
 
+    private void hapusBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusBTActionPerformed
+        // TODO add your handling code here:
+        cBK.hapusLaporanKeluar();
+        laporanBarangKeluar();
+    }//GEN-LAST:event_hapusBTActionPerformed
+
+    private void laporanBarangKeluarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_laporanBarangKeluarMouseClicked
+        // TODO add your handling code here:
+        ambilBarangKeluar();
+    }//GEN-LAST:event_laporanBarangKeluarMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField barangKeluar;
@@ -420,6 +461,7 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
     private javax.swing.JButton batalBT;
     private javax.swing.JButton cariData;
     private javax.swing.JTextField expBarang;
+    private javax.swing.JButton hapusBT;
     private javax.swing.JTextField idBarangKeluar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
