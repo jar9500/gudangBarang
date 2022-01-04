@@ -309,6 +309,7 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
         keteranganKeluar.setRows(5);
         jScrollPane2.setViewportView(keteranganKeluar);
 
+        simpanBT.setBackground(new java.awt.Color(168, 228, 177));
         simpanBT.setText("Simpan");
         simpanBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -316,6 +317,7 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
             }
         });
 
+        batalBT.setBackground(new java.awt.Color(235, 168, 58));
         batalBT.setText("Batal");
         batalBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -323,6 +325,7 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
             }
         });
 
+        hapusBT.setBackground(new java.awt.Color(218, 92, 83));
         hapusBT.setText("Hapus");
         hapusBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.controllerLogin;
 import database.koneksi;
 import gudangbarang.app_utama;
 import java.sql.PreparedStatement;
@@ -13,6 +14,8 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -23,10 +26,23 @@ public class viewLogin extends javax.swing.JFrame {
     /**
      * Creates new form viewLogin
      */
+    private controllerLogin cL;
+    
     public viewLogin() {
         initComponents();
+        
+        cL = new controllerLogin(this);
     }
 
+    public JPasswordField getPassword() {
+        return password;
+    }
+
+    public JTextField getUsername() {
+        return username;
+    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -139,60 +155,12 @@ public class viewLogin extends javax.swing.JFrame {
 
     private void tombolLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tombolLoginActionPerformed
         // TODO add your handling code here:
-        try{
-            String username1 = username.getText();
-            String password1 = String.valueOf(password.getText());
-            String sql = "SELECT * FROM user WHERE username = '"+username1+"' AND password ='"+password1+"'";
-            PreparedStatement eksekusi = koneksi.getKoneksi().prepareStatement(sql);
-            eksekusi.execute();
-            eksekusi.execute(sql);
-            ResultSet rs = eksekusi.executeQuery(sql);
-                if(rs.next()){
-                    JOptionPane.showMessageDialog(null, "Login Succesfull","Login Success", 1);
-                    new app_utama().setVisible(true);
-                    this.dispose();
-                }else{
-                    JOptionPane.showMessageDialog(null, "Incorrect Username Or Password", "Login Failed", 2);
-                }
-       } catch (SQLException x) {
-             JOptionPane.showMessageDialog(null,"Login Gagal" + x);
-        }
+        cL.login();
     }//GEN-LAST:event_tombolLoginActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(viewLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(viewLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(viewLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(viewLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new viewLogin().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

@@ -20,7 +20,7 @@ public class app_utama extends javax.swing.JFrame {
      */
     public app_utama() {
         initComponents();
-        
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
