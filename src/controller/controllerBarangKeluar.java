@@ -50,6 +50,16 @@ public class controllerBarangKeluar {
         vBK.getKeteranganKeluar().setText("");
     }
     
+        public void bersihkanDataBarang(){
+        // pemanggilan variabel object swing yang ada di view
+        vBK.getKodeBarang().setText("");
+        vBK.getNamaBarang().setText("");
+        vBK.getStokBarang().setText("");
+        vBK.getExpBarang().setText("");
+        vBK.getBarangMasuk().setText("");
+        vBK.getKeteranganBarang().setText("");
+    }
+    
     public void hapusLaporanKeluar(){
         mBK = new modelBarangKeluar();
         mBK.setIdBarangKeluar(vBK.getIdBarangKeluar().getText());
@@ -58,4 +68,17 @@ public class controllerBarangKeluar {
         bersihkan();
     }
     
+        public void kontrolButton(){
+        vBK.getSimpanBT().setEnabled(true);
+        vBK.getHapusBT().setEnabled(false);
+        vBK.getCariData().setEnabled(true);
+        vBK.getBatalBT().setEnabled(true);
+    }
+    
+    public void kontrolButtonDua(){
+        vBK.getSimpanBT().setEnabled(false);
+        vBK.getHapusBT().setEnabled(true);
+        vBK.getCariData().setEnabled(false);
+        vBK.getBatalBT().setEnabled(true);
+    }
 }

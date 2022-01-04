@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -47,6 +48,7 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
         
         cBK = new controllerBarangKeluar(this);
         laporanBarangKeluar();
+        cBK.kontrolButton();
     }
 
     public JTextField getBarangMasuk() {
@@ -88,6 +90,23 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
     public JTextArea getKeteranganKeluar() {
         return keteranganKeluar;
     }
+
+    public JButton getBatalBT() {
+        return batalBT;
+    }
+
+    public JButton getCariData() {
+        return cariData;
+    }
+
+    public JButton getHapusBT() {
+        return hapusBT;
+    }
+
+    public JButton getSimpanBT() {
+        return simpanBT;
+    }
+    
     
     private void laporanBarangKeluar(){
         model.getDataVector().removeAllElements();
@@ -135,7 +154,8 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
         barangKeluar.setText(tglKeluar);
         keteranganKeluar.setText(ketKeluar);
         
-        //cB.kontrolButtonDua();
+        cBK.kontrolButtonDua();
+        cBK.bersihkanDataBarang();
     }
     
     
@@ -441,6 +461,7 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
     private void batalBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batalBTActionPerformed
         // TODO add your handling code here:
         cBK.bersihkan();
+        cBK.kontrolButton();
     }//GEN-LAST:event_batalBTActionPerformed
 
     private void hapusBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusBTActionPerformed
