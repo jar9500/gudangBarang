@@ -243,6 +243,7 @@
                       <Component id="simpanBT" max="32767" attributes="0"/>
                       <Component id="batalBT" max="32767" attributes="0"/>
                       <Component id="hapusBT" max="32767" attributes="0"/>
+                      <Component id="cetakBT" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
@@ -254,6 +255,8 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
+                          <Component id="cetakBT" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="hapusBT" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="batalBT" min="-2" max="-2" attributes="0"/>
@@ -360,6 +363,17 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hapusBTActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="cetakBT">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="66" red="66" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Cetak"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cetakBTActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

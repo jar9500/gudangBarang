@@ -18,6 +18,25 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+import database.koneksi;
+import java.io.File;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.HashSet;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -30,6 +49,7 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
      */
     private DefaultTableModel model;
     private controllerBarangKeluar cBK;
+    private static Connection conn;
     
     public viewBarangKeluar() {
         initComponents();
@@ -195,6 +215,7 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
         simpanBT = new javax.swing.JButton();
         batalBT = new javax.swing.JButton();
         hapusBT = new javax.swing.JButton();
+        cetakBT = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         laporanBarangKeluar = new javax.swing.JTable();
 
@@ -333,6 +354,14 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
             }
         });
 
+        cetakBT.setBackground(new java.awt.Color(102, 102, 255));
+        cetakBT.setText("Cetak");
+        cetakBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cetakBTActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -354,7 +383,8 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(simpanBT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(batalBT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(hapusBT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(hapusBT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cetakBT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(23, 23, 23))
         );
         jPanel2Layout.setVerticalGroup(
@@ -363,6 +393,8 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(cetakBT)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(hapusBT)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(batalBT)
@@ -464,12 +496,62 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
         ambilBarangKeluar();
     }//GEN-LAST:event_laporanBarangKeluarMouseClicked
 
+    private void cetakBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cetakBTActionPerformed
+        try {
+            File namafile = new File("src/laporan/laporanBarangKeluar.jasper");
+            JasperPrint jp = JasperFillManager.fillReport(namafile.getPath(), null, koneksi.getKoneksi());
+            JasperViewer.viewReport(jp, false);
+        } catch (JRException e) {
+            JOptionPane.showMessageDialog(rootPane, e);
+        } catch (SQLException ex) {
+            Logger.getLogger(viewBarangKeluar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        /*
+        try {
+            File namafile = new File("src/laporan/laporanBarangKeluar.jasper");
+            JasperPrint jp = JasperFillManager.fillReport(namafile.getPath(), null, koneksi.getConnection());
+            JasperViewer.viewReport(jp, false);
+        } catch (JRException e) {
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+        */
+        /*
+        try {
+            // TODO add your handling code here:
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/gudang_barang","root","");
+            JasperDesign jdesign = JRXmlLoader.load("C:\\xampp\\htdocs\\gudangBarang\\src\\laporan\\laporanBarangKeluar.jrxml");
+            String query = "select * from barang_keluar";
+            
+            JRDesignQuery updateQuery = new JRDesignQuery();
+            updateQuery.setText(query);
+            
+            jdesign.setQuery(updateQuery);
+            
+            JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+            JasperPrint jprint = JasperFillManager.fillReport(jreport, null, conn);
+            
+            JasperViewer.viewReport(jprint);
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(viewBarangKeluar.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(viewBarangKeluar.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (JRException ex) {
+            Logger.getLogger(viewBarangKeluar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        */
+        
+    }//GEN-LAST:event_cetakBTActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField barangKeluar;
     private javax.swing.JTextField barangMasuk;
     private javax.swing.JButton batalBT;
     private javax.swing.JButton cariData;
+    private javax.swing.JButton cetakBT;
     private javax.swing.JTextField expBarang;
     private javax.swing.JButton hapusBT;
     private javax.swing.JTextField idBarangKeluar;
