@@ -35,16 +35,16 @@
 				<imageExpression><![CDATA["leaf_banner_red.png"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="ed40df0f-a427-42ba-a69f-36b21bbb846a"/>
+				<reportElement style="Title" x="0" y="13" width="275" height="33" uuid="ed40df0f-a427-42ba-a69f-36b21bbb846a"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Century Gothic" size="20"/>
+					<font fontName="Times New Roman" size="18"/>
 				</textElement>
 				<text><![CDATA[LAPORAN BARANG KELUAR]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="SubTitle" x="60" y="46" width="203" height="22" uuid="95131f8d-ff7a-4d0b-8f03-8f119a2d9139"/>
 				<textElement>
-					<font size="14" isBold="true"/>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[CV. Cemerlang Dwi Lestari]]></text>
 			</staticText>
