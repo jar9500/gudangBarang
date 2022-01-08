@@ -419,6 +419,7 @@ public class viewBarang extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         cB.bersihkan();
         cB.kontrolButton();
+        tampilDataBarang();
     }//GEN-LAST:event_tombolBatalActionPerformed
 
     private void ExpAscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExpAscActionPerformed
