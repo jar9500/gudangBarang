@@ -229,8 +229,10 @@ public class viewBarang extends javax.swing.JInternalFrame {
         barangMasuk = new javax.swing.JTextField();
 
         setClosable(true);
+        setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
+        setTitle("Menu Inventaris Barang");
 
         tombolBatal.setBackground(new java.awt.Color(235, 168, 58));
         tombolBatal.setText("Batal");

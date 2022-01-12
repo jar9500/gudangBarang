@@ -221,7 +221,9 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setIconifiable(true);
-        setTitle("Laporan Barang Keluar");
+        setMaximizable(true);
+        setResizable(true);
+        setTitle("Menu Laporan Barang Keluar");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Data Barang"));
 

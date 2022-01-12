@@ -29,9 +29,8 @@ public class controllerBarang {
         mB.setBarangMasukModel(vB.getBarangMasukView().getText());   
         mB.setKeteranganBarangModel(vB.getKeteranganBarangView().getText());
         
-        // JOptionPane.showConfirmDialog(vP, " Nama Pelanggan : "+mP.getNamaPelangganModel()+"\n Nomor Hp : "+mP.getNomorHpModel()+"\n Jenis Kelamin : "+mP.getJenisKelaminModel()+"\n Umur : "+mP.getUmur()+"\n Alamat: "+mP.getAlamat());
-        
         mB.simpanBarang();
+        bersihkan();
     }
     
     public void bersihkan(){

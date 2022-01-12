@@ -8,6 +8,7 @@ package view;
 import controller.controllerLogin;
 import database.koneksi;
 import gudangbarang.app_utama;
+import java.awt.event.KeyEvent;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -77,6 +78,12 @@ public class viewLogin extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Password");
 
+        username.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                usernameKeyPressed(evt);
+            }
+        });
+
         tombolLogin.setBackground(new java.awt.Color(168, 228, 177));
         tombolLogin.setText("LOGIN");
         tombolLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +94,12 @@ public class viewLogin extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Cambria", 0, 10)); // NOI18N
         jLabel4.setText("Silahkan login untuk masuk ke dalam sistem");
+
+        password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                passwordKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -158,6 +171,21 @@ public class viewLogin extends javax.swing.JFrame {
         cL.login();
         dispose();
     }//GEN-LAST:event_tombolLoginActionPerformed
+
+    private void usernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_usernameKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            password.requestFocus();
+        }
+    }//GEN-LAST:event_usernameKeyPressed
+
+    private void passwordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            cL.login();
+            dispose();
+        }
+    }//GEN-LAST:event_passwordKeyPressed
 
     /**
      * @param args the command line arguments
