@@ -39,8 +39,8 @@ public class controllerBarang {
         vB.getKodeBarangView().setText("");
         vB.getNamaBarangView().setText("");
         vB.getStokBarangView().setText("");
-        vB.getTglExpiredView().setText("");
-        vB.getBarangMasukView().setText("");
+        vB.getTglExpiredView().setText("yyyy-mm-dd");
+        vB.getBarangMasukView().setText("yyyy-mm-dd");
         vB.getKeteranganBarangView().setText("");
     }
     
@@ -49,6 +49,7 @@ public class controllerBarang {
         vB.getTombolEdit().setEnabled(false);
         vB.getTombolHapus().setEnabled(false);
         vB.getTombolBatal().setEnabled(true);
+        vB.getKodeBarangView().setEditable(true);
     }
     
     public void kontrolButtonDua(){

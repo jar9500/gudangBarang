@@ -324,6 +324,8 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
 
         jLabel9.setText("Tanggal Keluar");
 
+        barangKeluar.setText("yyyy-mm-dd");
+
         jLabel10.setText("Keterangan");
 
         keteranganKeluar.setColumns(20);

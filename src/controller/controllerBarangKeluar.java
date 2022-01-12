@@ -47,7 +47,7 @@ public class controllerBarangKeluar {
         
         vBK.getIdBarangKeluar().setText("");
         vBK.getJumlahBarangKeluar().setText("");
-        vBK.getBarangKeluar().setText("");
+        vBK.getBarangKeluar().setText("yyyy-mm-dd");
         vBK.getKeteranganKeluar().setText("");
     }
     

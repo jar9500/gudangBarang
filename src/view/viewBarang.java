@@ -193,6 +193,7 @@ public class viewBarang extends javax.swing.JInternalFrame {
         keteranganBarang.setText(keterangan);
         
         cB.kontrolButtonDua();
+        kodeBarang.setEditable(false);
     }
 
     /**

@@ -107,8 +107,7 @@ public class modelBarang {
     
     public void updateBarang(){
         
-        String sql = "UPDATE barang SET kd_barang = '"+getKodeBarangModel()+"'"
-                + " ,nama_barang = '"+getNamaBarangModel()+"'"
+        String sql = "UPDATE barang SET nama_barang = '"+getNamaBarangModel()+"'"
                 + " ,stok = '"+getStokBarangModel()+"'"
                 + " ,tgl_exp = '"+getTglExpiredModel()+"'"
                 + " ,barang_masuk = '"+getBarangMasukModel()+"'"
