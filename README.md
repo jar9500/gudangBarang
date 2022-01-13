@@ -51,4 +51,4 @@ User Interface Cetak Laporan
 ## Special Thanks
 
 Terima Kasih kepada CV. Cemerlang Dwi Lestari yang sudah bersedia menjadi objek penelitian selama perancangan proyek ini
-dan Terima kasih kepada Pak Kamal Prihandani, M.Kom. sebagai dosen pengampu mata kuliah Pemrograman Desktop
+dan Terima kasih kepada Pak Kamal Prihandani, M.Kom. selaku dosen pengampu mata kuliah Pemrograman Desktop.
