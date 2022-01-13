@@ -198,6 +198,7 @@ public class viewListDataBarang extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        viewListDataBarang.setSelectionBackground(new java.awt.Color(102, 102, 255));
         viewListDataBarang.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 viewListDataBarangMouseClicked(evt);

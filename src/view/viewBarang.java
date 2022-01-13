@@ -316,6 +316,7 @@ public class viewBarang extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tabelBarang.setSelectionBackground(new java.awt.Color(102, 102, 255));
         tabelBarang.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tabelBarangMouseClicked(evt);
