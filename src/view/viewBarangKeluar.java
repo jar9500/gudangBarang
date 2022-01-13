@@ -350,7 +350,7 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
             }
         });
 
-        hapusBT.setBackground(new java.awt.Color(218, 92, 83));
+        hapusBT.setBackground(new java.awt.Color(255, 51, 51));
         hapusBT.setText("Hapus");
         hapusBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -423,6 +423,8 @@ public class viewBarangKeluar extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        laporanBarangKeluar.setBackground(new java.awt.Color(204, 204, 255));
+        laporanBarangKeluar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         laporanBarangKeluar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},

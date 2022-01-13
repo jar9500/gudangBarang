@@ -186,6 +186,7 @@ public class viewListDataBarang extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        viewListDataBarang.setBackground(new java.awt.Color(204, 204, 255));
         viewListDataBarang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
