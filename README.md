@@ -21,4 +21,23 @@ Jl. Raya Purwadadi, Purwadadi Barat, Kec. Purwadadi, Kabupaten Subang, Jawa Bara
 
 ![Picture1](https://user-images.githubusercontent.com/84485549/149272229-cb4545d2-e6cf-4ff4-b181-33de45a14203.png)
 
-![Login](19126-RizkyBayuDwiputra.github.com/repository/foto/login.png)
+
+# User Interface
+
+<h4> User Interface Login </h4>
+![Login](https://user-images.githubusercontent.com/84485549/149275339-7fe4db3a-f3be-4cbd-80ee-4e7e75585485.png)
+
+
+<h4> User Interface Menu Utama </h4>
+
+
+
+<h4> User Interface Menu Inventari Barang </h4>
+
+
+
+<h4> User Interface Menu Laporan Barang Keluar </h4>
+
+
+
+<h4> User Interface Cetak Laporan </h4>
