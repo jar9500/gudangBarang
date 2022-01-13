@@ -275,7 +275,7 @@ public class viewBarang extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Keterangan");
 
-        tombolUbah.setBackground(new java.awt.Color(74, 163, 186));
+        tombolUbah.setBackground(new java.awt.Color(51, 51, 255));
         tombolUbah.setText("Ubah");
         tombolUbah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -291,7 +291,7 @@ public class viewBarang extends javax.swing.JInternalFrame {
             }
         });
 
-        tombolHapus.setBackground(new java.awt.Color(218, 92, 83));
+        tombolHapus.setBackground(new java.awt.Color(255, 51, 51));
         tombolHapus.setText("Hapus");
         tombolHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -299,7 +299,8 @@ public class viewBarang extends javax.swing.JInternalFrame {
             }
         });
 
-        tabelBarang.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tabelBarang.setBackground(new java.awt.Color(204, 204, 255));
+        tabelBarang.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tabelBarang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
