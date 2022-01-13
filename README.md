@@ -14,3 +14,5 @@ The members who are responsible for this project are :
 Pull and requests are open to the public. For large-scale changes, please open the "issue" first to discuss anything that you guys will change in the future. Thank You....
 
 Best Regard's, from us.
+
+# CV. Cemerlang Dwi Lestari
