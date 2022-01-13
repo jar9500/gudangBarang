@@ -60,6 +60,8 @@ public class app_utama extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Cambria", 1, 24)); // NOI18N
         jLabel1.setText("Program Inventory Management CV. Cemerlang Dwi Lestari");
 
+        jMenuBar1.setBackground(new java.awt.Color(204, 204, 255));
+
         jMenu1.setText("File");
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
