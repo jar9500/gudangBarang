@@ -16,4 +16,4 @@ Pull and requests are open to the public. For large-scale changes, please open t
 Best Regard's, from us.
 
 # CV. Cemerlang Dwi Lestari
-https://github.com/jar9500/gudangBarang/issues/1#issue-1101229775
+![Picture1](https://user-images.githubusercontent.com/84485549/149272229-cb4545d2-e6cf-4ff4-b181-33de45a14203.png)
