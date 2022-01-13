@@ -66,7 +66,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel1" min="-2" pref="336" max="-2" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Component id="tombolLogin" min="-2" pref="106" max="-2" attributes="0"/>
+                                  <Component id="tombolLogin" min="-2" pref="84" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel3" min="-2" pref="64" max="-2" attributes="0"/>
@@ -97,7 +97,7 @@
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="52" max="32767" attributes="0"/>
+                  <EmptySpace pref="54" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="username" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -108,8 +108,8 @@
                       <Component id="password" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="tombolLogin" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+                  <Component id="tombolLogin" min="-2" pref="31" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -154,7 +154,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="LOGIN"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+              <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
               </Border>
             </Property>
